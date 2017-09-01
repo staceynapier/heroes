@@ -13,6 +13,10 @@ describe("Task", function() {
     assert.strictEqual(eating.difficulty, 1);
   })
 
+  it("should have an urgency score", function() {
+    assert.strictEqual(eating.urgency, 3);
+  })
+
 })
 //
 //   A task has a difficulty level out of 5
