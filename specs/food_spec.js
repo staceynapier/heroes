@@ -12,3 +12,5 @@ describe("Food", function() {
   it("should have a name", function() {
     assert.strictEqual(food1.name, "cheeseburger");
   })
+
+})
