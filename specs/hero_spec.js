@@ -54,4 +54,12 @@ describe("Hero", function() {
     assert.strictEqual(hero.health, 60);
   })
 
+  it("should increase health further if favFood eaten", function() {
+    food1 = new Food("cheeseburger", 10);
+    eating = new Task(1, 3, 5);
+    hero.add("eating");
+    hero.eat(food1);
+    assert.strictEqual(hero.health, 65);
+  })
+
 })
