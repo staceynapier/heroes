@@ -17,6 +17,10 @@ describe("Task", function() {
     assert.strictEqual(eating.urgency, 3);
   })
 
+  it("should have a reward", function() {
+    assert.strictEqual(eating.reward, 5);
+  })
+
 })
 //
 //   A task has a difficulty level out of 5
