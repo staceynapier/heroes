@@ -34,4 +34,8 @@ describe("Hero", function() {
     assert.strictEqual(hero.tasks.length, 1);
   })
 
+  it("should be able to eat", function() {
+    assert.strictEqual(hero.eat("sandwich"), "Yum, I like a sandwich");
+  })
+
 })
