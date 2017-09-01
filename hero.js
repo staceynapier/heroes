@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var Hero = function( name, favFood ) {
   this.name = name;
   this.favFood = favFood;
@@ -17,11 +19,14 @@ Hero.prototype.add = function(task) {
 Hero.prototype.eat = function(food, task) {
   if(food.name === this.favFood) {
     this.health += (food.replenishmentValue *1.5);
-    return ("Yum, I like a " + food.name)
   } else {
     this.health += food.replenishmentValue;
-    return ("Yum, I like a " + food.name)
   }
+  return ("Yum, I like a " + food.name)
+}
+
+Hero.prototype.sortByDifficulty = function() {
+  return _.sortBy( this.tasks, 'difficulty' );
 }
 
 module.exports = Hero;

@@ -1,7 +1,9 @@
 var assert = require('assert');
+var _ = require('underscore');
 var Hero = require('../hero.js');
 var Task = require('../task.js');
 var Food = require('../food.js');
+
 
 describe("Hero", function() {
 
@@ -60,6 +62,28 @@ describe("Hero", function() {
     hero.add("eating");
     hero.eat(food1);
     assert.strictEqual(hero.health, 65);
+  })
+
+  it("can sort tasks by difficulty - check first in array", function() {
+    eating = new Task(2, 3, 5);
+    sleeping = new Task(1, 2, 15);
+    flying = new Task(5, 4, 0);
+    hero.add(eating);
+    hero.add(sleeping);
+    hero.add(flying);
+    newArray = hero.sortByDifficulty();
+    assert.deepEqual(newArray.indexOf(sleeping), 0);
+  })
+
+  it("can sort tasks by difficulty - check first in array", function() {
+    eating = new Task(2, 3, 5);
+    sleeping = new Task(1, 2, 15);
+    flying = new Task(5, 4, 0);
+    hero.add(eating);
+    hero.add(sleeping);
+    hero.add(flying);
+    newArray = hero.sortByDifficulty();
+    assert.deepEqual(newArray.indexOf(flying), 2);
   })
 
 })
