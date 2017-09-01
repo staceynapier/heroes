@@ -91,13 +91,15 @@ describe("Hero", function() {
     eating = new Task(2, 3, 5);
     sleeping = new Task(1, 2, 15);
     flying = new Task(5, 4, 0);
-    console.log(hero.add(eating));
     hero.eat(food1);
-    eating.taskComplete()
+    hero.add(eating);
     hero.add(sleeping);
     hero.add(flying);
-    newArray = hero.sortifComplete();
-    assert.strictEqual(eating.isComplete, true);
+    eating.taskComplete()
+    console.log(eating.taskComplete());
+    var newArray = hero.sortifComplete();
+    console.log(newArray);
+    assert.deepEqual(newArray[0], eating);
   })
 
 })

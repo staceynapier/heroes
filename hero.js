@@ -30,11 +30,13 @@ Hero.prototype.sortByDifficulty = function() {
 }
 
 Hero.prototype.sortifComplete = function() {
+  completedTasks = [];
   this.tasks.filter( function (task) {
     if ( task.isComplete === true ) {
-      return task;
+      completedTasks.push(task);
     }
   } )
+  return completedTasks;
 }
 
 module.exports = Hero;
