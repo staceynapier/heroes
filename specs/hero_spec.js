@@ -8,6 +8,7 @@ describe("Hero", function() {
   var hero;
   var eating;
   var food1;
+  var task;
 
   beforeEach(function() {
     hero = new Hero("Superman", "cheeseburger")
@@ -21,8 +22,8 @@ describe("Hero", function() {
     assert.strictEqual(hero.favFood, "cheeseburger");
   });
 
-  it("should have full health to start", function() {
-    assert.strictEqual(hero.health, 0);
+  it("should have half health to start", function() {
+    assert.strictEqual(hero.health, 50);
   });
 
   it("should have an empty array of tasks at start", function() {
@@ -43,6 +44,14 @@ describe("Hero", function() {
     eating = new Task(1, 3, 5);
     hero.add("eating");
     assert.strictEqual(hero.eat(food1), "Yum, I like a sandwich");
+  })
+
+  it("should change health after eating", function() {
+    food1 = new Food("sandwich", 10);
+    eating = new Task(1, 3, 5);
+    hero.add("eating");
+    hero.eat(food1);
+    assert.strictEqual(hero.health, 60);
   })
 
 })

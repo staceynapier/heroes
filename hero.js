@@ -1,7 +1,7 @@
 var Hero = function( name, favFood ) {
   this.name = name;
   this.favFood = favFood;
-  this.health = 0;
+  this.health = 50;
   this.tasks = [];
 }
 
@@ -14,16 +14,14 @@ Hero.prototype.add = function(task) {
   return this.tasks;
 }
 
-Hero.prototype.eat = function(food) {
+Hero.prototype.eat = function(food, task) {
   if(food.name === this.favFood) {
     this.health += (food.replenishmentValue *1.5);
+    return ("Yum, I like a " + food.name)
   } else {
     this.health += food.replenishmentValue;
+    return ("Yum, I like a " + food.name)
   }
-  for(task of this.tasks) {
-    this.tasks["eating"] = true;
-  }
-  return ("Yum, I like a " + food.name);
 }
 
 module.exports = Hero;
