@@ -13,4 +13,8 @@ describe("Food", function() {
     assert.strictEqual(food1.name, "cheeseburger");
   })
 
+  it("should have a replenishment value", function() {
+    assert.strictEqual(food1.replenishmentValue, 15);
+  })
+
 })
