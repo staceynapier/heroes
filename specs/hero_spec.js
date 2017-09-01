@@ -21,4 +21,8 @@ describe("Hero", function() {
     assert.strictEqual(hero.health, 0);
   });
 
+  it("should have an empty array of tasks at start", function() {
+    assert.strictEqual(hero.tasks.length, 0);
+  });
+
 })
