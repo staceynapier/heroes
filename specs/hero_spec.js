@@ -30,7 +30,7 @@ describe("Hero", function() {
   });
 
   it("can add tasks", function() {
-    hero.tasks.add("eating");
+    hero.add("eating");
     assert.strictEqual(hero.tasks.length, 1);
   })
 

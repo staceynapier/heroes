@@ -9,4 +9,9 @@ Hero.prototype.talk = function(){
   return("I am " + this.name);
 }
 
+Hero.prototype.add = function(task) {
+  this.tasks.push(task);
+  return this.tasks;
+}
+
 module.exports = Hero;
