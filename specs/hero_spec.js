@@ -82,8 +82,22 @@ describe("Hero", function() {
     hero.add(eating);
     hero.add(sleeping);
     hero.add(flying);
-    newArray = hero.sortByDifficulty();
+    newArray = hero.sortByDifficulty('difficulty');
     assert.deepEqual(newArray.indexOf(flying), 2);
+  })
+
+  it("can add and complete tasks", function() {
+    food1 = new Food("sandwich", 10);
+    eating = new Task(2, 3, 5);
+    sleeping = new Task(1, 2, 15);
+    flying = new Task(5, 4, 0);
+    console.log(hero.add(eating));
+    hero.eat(food1);
+    eating.taskComplete()
+    hero.add(sleeping);
+    hero.add(flying);
+    newArray = hero.sortifComplete();
+    assert.strictEqual(eating.isComplete, true);
   })
 
 })

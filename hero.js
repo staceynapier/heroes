@@ -29,4 +29,12 @@ Hero.prototype.sortByDifficulty = function() {
   return _.sortBy( this.tasks, 'difficulty' );
 }
 
+Hero.prototype.sortifComplete = function() {
+  this.tasks.filter( function (task) {
+    if ( task.isComplete === true ) {
+      return task;
+    }
+  } )
+}
+
 module.exports = Hero;
