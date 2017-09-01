@@ -21,6 +21,10 @@ describe("Task", function() {
     assert.strictEqual(eating.reward, 5);
   })
 
+  it("should not be complete at start", function() {
+    assert.strictEqual(eating.isComplete, false);
+  })
+
 })
 //
 //   A task has a difficulty level out of 5
