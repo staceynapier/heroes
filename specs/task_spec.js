@@ -25,6 +25,10 @@ describe("Task", function() {
     assert.strictEqual(eating.isComplete, false);
   })
 
+  it("can be marked as compled", function() {
+    assert.strictEqual(eating.taskComplete(), true);
+  })
+
 })
 //
 //   A task has a difficulty level out of 5
