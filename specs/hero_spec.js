@@ -75,7 +75,7 @@ describe("Hero", function() {
     assert.deepEqual(newArray.indexOf(sleeping), 0);
   })
 
-  it("can sort tasks by difficulty - check first in array", function() {
+  it("can sort tasks by difficulty - check last in array", function() {
     eating = new Task(2, 3, 5);
     sleeping = new Task(1, 2, 15);
     flying = new Task(5, 4, 0);
@@ -96,9 +96,7 @@ describe("Hero", function() {
     hero.add(sleeping);
     hero.add(flying);
     eating.taskComplete()
-    console.log(eating.taskComplete());
     var newArray = hero.sortifComplete();
-    console.log(newArray);
     assert.deepEqual(newArray[0], eating);
   })
 
